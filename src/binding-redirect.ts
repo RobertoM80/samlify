@@ -94,7 +94,7 @@ function loginRequestRedirectURL(entity: { idp: Idp, sp: Sp }, customTagReplacem
         Destination: base,
         Issuer: metadata.sp.getEntityID(),
         IssueInstant: new Date().toISOString(),
-        NameIDFormat: namespace.format[spSetting.loginNameIDFormat] || namespace.format.emailAddress,
+        NameIDFormat: namespace.format[spSetting.nameIDFormat] || namespace.format.emailAddress,
         AssertionConsumerServiceURL: metadata.sp.getAssertionConsumerService(binding.post),
         EntityID: metadata.sp.getEntityID(),
         AllowCreate: spSetting.allowCreate,
@@ -140,7 +140,7 @@ function logoutRequestRedirectURL(user, entity, relayState?: string, customTagRe
         EntityID: metadata.init.getEntityID(),
         Issuer: metadata.init.getEntityID(),
         IssueInstant: new Date().toISOString(),
-        NameIDFormat: namespace.format[initSetting.logoutNameIDFormat] || namespace.format.emailAddress,
+        NameIDFormat: namespace.format[initSetting.nameIDFormat] || namespace.format.emailAddress,
         NameID: user.logoutNameID,
         SessionIndex: user.sessionIndex,
       } as any);
