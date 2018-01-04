@@ -28,7 +28,7 @@
   ],
   "author": "tngan",
   "repository": {
-    "url": "https://github.com/RobertoM80/samlify",
+    "url": "git+https://github.com/RobertoM80/samlify.git",
     "type": "git"
   },
   "license": "MIT",
